@@ -81,7 +81,15 @@ object arito {
 }
 
 object banquito {
-  
+  var color = naranja
+ 
+  method color() = color
+  method material() = madera
+  method peso() = 1700
+
+  method cambiarColor(nuevoColor) {
+    color = nuevoColor
+  }
 }
 
 object biblioteca {
@@ -99,11 +107,27 @@ object biblioteca {
 }
 
 object cajita {
-  
+  var objetoAdentro = remera
+
+  method peso() = 400 + objetoAdentro.peso()
+
+  method guardarAdentro(nuevoObjeto) {
+    objetoAdentro = nuevoObjeto
+  }
 }
 
 object munieco {
-  
+  var peso = 500
+
+  method color() = celeste
+  method material() = vidrio
+  method peso() = peso
+
+  method cambiarPeso(nuevoPeso) {
+    peso = nuevoPeso
+  }
+
+  // esDeColorFuerte y esDeMaterialQueBrilla: iguales que en la remera
 }
 
 object pelota {
@@ -121,7 +145,26 @@ object pelota {
 }
 
 object placa {
-  
+  var peso = 500
+  var color = celeste
+
+  method color() = color
+  method peso() = peso
+  method material() = cobre
+  method esDeColorFuerte() {
+    return self.color().esFuerte()
+  }
+  method esDeMaterialQueBrilla() {
+    return self.material().brilla()
+  }
+
+  method cambiarColor(nuevoColor) {
+    color = nuevoColor
+  }
+
+  method cambiarPeso(nuevoPeso) {
+    peso = nuevoPeso
+  }
 }
 
 object remera {
